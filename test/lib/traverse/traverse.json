@@ -1,0 +1,6 @@
+{
+	"sources": [
+		"interface.h",
+		"interface.hxx"			
+	]
+}
