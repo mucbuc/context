@@ -1,6 +1,8 @@
 {
 	"import":[
-		"lib/context/def.json"
+		"lib/context/def.json",
+		"lib/drop/def.json",
+		"lib/traverse/traverse.json"
 	],
 	"sources": [
 		"src/base.h",

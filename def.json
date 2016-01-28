@@ -1,8 +1,4 @@
 {
-	"import": [
-		"lib/drop/def.json",
-		"lib/traverse/traverse.json"
-	],
 	"sources": [
 		"src/default_subject.h",
 		"src/default_subject.hxx",
