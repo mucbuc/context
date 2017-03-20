@@ -1,4 +1,8 @@
 {
+	"import":[
+		"../drop/def.json",
+		"../traverse/traverse.json"
+	],
 	"sources": [
 		"src/default_subject.h",
 		"src/default_subject.hxx",
@@ -7,5 +11,6 @@
 		"src/fwd.h",
 		"src/interface.h",
 		"src/interface.hxx"
-	]
+	],
+	"flags": "opengl"
 }
