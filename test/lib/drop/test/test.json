@@ -1,0 +1,8 @@
+{
+	"import":[
+		"lib/drop/def.json"
+	],
+	"sources": [
+		"src/main.cpp"
+	]
+}
