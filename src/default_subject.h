@@ -1,7 +1,7 @@
 #ifndef DEFAULT_SUBJECT_H_HYJ7766FHF65
 #define DEFAULT_SUBJECT_H_HYJ7766FHF65
 
-#include <lib/context/src/interface.h> 
+#include <lib/context/src/fwd.h> 
 #include <lib/traverse/interface.h>
 
 namespace om636
