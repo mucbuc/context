@@ -3,5 +3,9 @@
   "version":"0.0.0",
   "scripts": {
     "test": "crimp test/test.json -g"
+  },
+  "devDependencies": {
+    "traverse": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
+    "drop": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/drop"
   }
 }

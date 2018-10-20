@@ -1,15 +1,15 @@
-#objective:
+# objective:
   * std::tuple traversal functions
  
-#dependencies:
+# dependencies:
   * std::tuple
 
-#usage:
+# usage:
   * the last argument is the functor handling the elements
   * the tuples can be passed by left reference, right reference or const reference
   * '_if' versions cancel traversal if the functor returns false
     
-######unary:
+###### unary:
   * `traverse::elements( tuple< a, b, c >(), f );`  
   => `f( a );` `f( b );` `f( c );`
   * `traverse::combinations( tuple< a, b, c >(), f );`  
@@ -19,7 +19,7 @@
   * `traverse::reduce( tuple< a, b, c >(), f );`  
   => `f( f( a, b ), c );`
  
-######binary:
+###### binary:
   * `traverse::parallel( tuple< a, b, c >(), tuple< d, e >(), f );`  
   => `f( a, d );` `f( b, e );`
   * `traverse::combinations( tuple< a, b, c >(), tuple< d, e >(), f );`  
