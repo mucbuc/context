@@ -25,7 +25,10 @@ void run_math_test()
     number2_type a(1), b(2); 
     a += b; 
 
-    cout << "a+b=" << a.subject_ref().log_ref() << endl;
+    ASSERT( a.subject_ref().log_ref() == "(1+2)" );
+
+    a -= b;
+    cout << a.subject_ref().log_ref() << endl;
 
     FOOTER;
 }
