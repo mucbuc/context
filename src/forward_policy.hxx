@@ -4,7 +4,7 @@ namespace om636 {
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V>
-typename forward_policy<T>::value_type forward_policy<T>::on_init(V&)
+auto forward_policy<T>::on_init(V&) -> value_type
 {
     return value_type();
 }
@@ -12,7 +12,7 @@ typename forward_policy<T>::value_type forward_policy<T>::on_init(V&)
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V, class W>
-typename forward_policy<T>::value_type forward_policy<T>::on_init(V&, const W& i)
+auto forward_policy<T>::on_init(V&, const W& i) -> value_type
 {
     return value_type(i);
 }
