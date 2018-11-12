@@ -3,6 +3,7 @@
 #define TRACK_POLICY_H_GGFDH8900700
 
 #include <string>
+#include <sstream> 
 
 #include <lib/context/src/forward_policy.h>
 #include <lib/drop/interface.h>
@@ -15,16 +16,14 @@ struct track_policy : forward_policy<T> {
     using typename base_type::value_type;
     
     typedef std::string string_type;
-/* 
+    using base_type::to_value;
+ 
     template <class V>
     static value_type on_init(V&);
 
     template <class V, class W>
     static value_type on_init(V&, const W&);
 
-    template <class V>
-    static V to_value(const context_type&);
-*/
     // modifiers
     virtual void on_swap(context_type&, context_type&) const;
     virtual void on_add(context_type&, const context_type&) const;

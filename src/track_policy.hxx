@@ -1,31 +1,26 @@
 namespace om636 {
-/*
 /////////////////////////////////////////////////////////////////////////////////////////////
 // track_policy<T>
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V>
-typename track_policy<T>::value_type forward_policy<T>::on_init(V&)
+auto track_policy<T>::on_init(V& v) -> value_type 
 {
-    return value_type();
+    log_ref() = "0";
+    return base_type::on_init(v);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V, class W>
-typename track_policy<T>::value_type forward_policy<T>::on_init(V&, const W& i)
+auto track_policy<T>::on_init(V& v, const W& i) -> value_type 
 {
-    return value_type(i);
+    std::stringstream s; 
+    s << i;
+    log_ref() = s.str();
+    return base_type::on_init(v, i);
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
-template <class T>
-template <class V>
-V track_policy<T>::to_value(const context_type& c)
-{
-    return c.value_ref();
-}
-*/
 // modifiers
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
@@ -33,8 +28,9 @@ void track_policy<T>::on_swap(context_type& lhs, context_type& rhs) const
 {
     using om636::swap;
     using std::swap;
-
-    swap(lhs.value_ref(), rhs.value_ref());
+    
+    base_type::on_swap(lhs, rhs);
+    swap(lhs.log_ref(), rhs.log_ref());
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
