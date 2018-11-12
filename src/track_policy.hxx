@@ -17,7 +17,7 @@ auto track_policy<T>::on_init(V& v, const W& i) -> value_type
 {
     std::stringstream s; 
     s << i;
-    log_ref() = s.str();
+    v.log_ref() = s.str();
     return base_type::on_init(v, i);
 }
 
@@ -37,6 +37,7 @@ void track_policy<T>::on_swap(context_type& lhs, context_type& rhs) const
 template <class T>
 void track_policy<T>::on_add(context_type& lhs, const context_type& rhs) const
 {
+   lhs.log_ref() = "(" + lhs.log_ref() + "+" + rhs.log_ref() + ")"; 
    base_type::on_add(lhs, rhs);
 }
 

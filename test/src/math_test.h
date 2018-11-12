@@ -19,8 +19,14 @@ void run_math_test()
     typedef context<int, forward_policy> number_type;
     tools::tester<number_type>::test_number();
 
-    typedef context<int, forward_policy> number2_type;
+    typedef context<int, track_policy> number2_type;
     tools::tester<number2_type>::test_number();
+
+    number2_type a(1), b(2); 
+    a += b; 
+
+    cout << "a+b=" << a.subject_ref().log_ref() << endl;
+
     FOOTER;
 }
 }
