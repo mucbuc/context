@@ -34,8 +34,6 @@ void run_math_test()
     a *= 17; 
     ASSERT( a.subject_ref().log_ref() == "1*17" ); 
 
-    cout << a.subject_ref().log_ref() << endl;
-
     FOOTER;
 }
 }
