@@ -1,10 +1,10 @@
 namespace om636 {
 /////////////////////////////////////////////////////////////////////////////////////////////
-// forward_policy<T>
+// track_policy<T>
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V>
-typename forward_policy<T>::value_type forward_policy<T>::on_init(V&)
+typename track_policy<T>::value_type forward_policy<T>::on_init(V&)
 {
     return value_type();
 }
@@ -12,7 +12,7 @@ typename forward_policy<T>::value_type forward_policy<T>::on_init(V&)
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V, class W>
-typename forward_policy<T>::value_type forward_policy<T>::on_init(V&, const W& i)
+typename track_policy<T>::value_type forward_policy<T>::on_init(V&, const W& i)
 {
     return value_type(i);
 }
@@ -20,7 +20,7 @@ typename forward_policy<T>::value_type forward_policy<T>::on_init(V&, const W& i
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V>
-V forward_policy<T>::to_value(const context_type& c)
+V track_policy<T>::to_value(const context_type& c)
 {
     return c.value_ref();
 }
@@ -28,21 +28,21 @@ V forward_policy<T>::to_value(const context_type& c)
 // comparisons
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-bool forward_policy<T>::on_equal(const context_type& lhs, const context_type& rhs) const
+bool track_policy<T>::on_equal(const context_type& lhs, const context_type& rhs) const
 {
     return lhs.value_ref() == rhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-int forward_policy<T>::on_cmp(const context_type& lhs, const context_type& rhs) const
+int track_policy<T>::on_cmp(const context_type& lhs, const context_type& rhs) const
 {
     return lhs.value_ref() - rhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-int forward_policy<T>::on_sign(const context_type& lhs) const
+int track_policy<T>::on_sign(const context_type& lhs) const
 {
     return om636::sign(lhs.value_ref());
 }
@@ -50,7 +50,7 @@ int forward_policy<T>::on_sign(const context_type& lhs) const
 // modifiers
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_swap(context_type& lhs, context_type& rhs) const
+void track_policy<T>::on_swap(context_type& lhs, context_type& rhs) const
 {
     using om636::swap;
     using std::swap;
@@ -60,56 +60,56 @@ void forward_policy<T>::on_swap(context_type& lhs, context_type& rhs) const
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_add(context_type& lhs, const context_type& rhs) const
+void track_policy<T>::on_add(context_type& lhs, const context_type& rhs) const
 {
     lhs.value_ref() += rhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_subtract(context_type& lhs, const context_type& rhs) const
+void track_policy<T>::on_subtract(context_type& lhs, const context_type& rhs) const
 {
     lhs.value_ref() -= rhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_mult(context_type& lhs, const context_type& rhs) const
+void track_policy<T>::on_mult(context_type& lhs, const context_type& rhs) const
 {
     lhs.value_ref() *= rhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_divide(context_type& lhs, const context_type& rhs) const
+void track_policy<T>::on_divide(context_type& lhs, const context_type& rhs) const
 {
     lhs.value_ref() /= rhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_remainder(context_type& lhs, const context_type& rhs) const
+void track_policy<T>::on_remainder(context_type& lhs, const context_type& rhs) const
 {
     lhs.value_ref() %= lhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_inc(context_type& lhs) const
+void track_policy<T>::on_inc(context_type& lhs) const
 {
     ++lhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_dec(context_type& lhs) const
+void track_policy<T>::on_dec(context_type& lhs) const
 {
     --lhs.value_ref();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
-void forward_policy<T>::on_invert(context_type& lhs) const
+void track_policy<T>::on_invert(context_type& lhs) const
 {
     lhs.value_ref() = value_type(1) / lhs.value_ref();
 }

@@ -1,16 +1,17 @@
 
-#ifndef FORWARD_POLICY_H_GGFDH8900700
-#define FORWARD_POLICY_H_GGFDH8900700
+#ifndef TRACK_POLICY_H_GGFDH8900700
+#define TRACK_POLICY_H_GGFDH8900700
 
-#include "default_subject.h"
+#include <lib/context/src/forward_policy.h>
 #include <lib/drop/interface.h>
 
 namespace om636 {
 template <class T>
-struct forward_policy {
-    typedef T context_type;
-    typedef typename default_subject::traits<T>::value_type value_type;
-
+struct track_policy : forward_policy<T> {
+    typedef forward_policy<T> base_type; 
+    using typename base_type::context_type;
+    using typename base_type::value_type;
+/* 
     template <class V>
     static value_type on_init(V&);
 
@@ -34,11 +35,11 @@ struct forward_policy {
     virtual void on_remainder(context_type&, const context_type&) const;
     virtual void on_inc(context_type&) const;
     virtual void on_dec(context_type&) const;
-    virtual void on_invert(context_type&) const;
+    virtual void on_invert(context_type&) const;*/
 };
 
 } // om636
 
-#include "forward_policy.hxx"
+//#include "track_policy.hxx"
 
-#endif // FORWARD_POLICY_H_GGFDH8900700
+#endif // TRACK_POLICY_H_GGFDH8900700
