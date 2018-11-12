@@ -93,4 +93,17 @@ void track_policy<T>::on_invert(context_type& lhs) const
   base_type::on_invert(lhs);
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T>
+auto track_policy<T>::log_ref() -> string_type &
+{
+  return m_log;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T>
+auto track_policy<T>::log_ref() const -> string_type
+{
+  return m_log;
+}
 } // om636
