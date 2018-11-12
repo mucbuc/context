@@ -6,7 +6,7 @@ template <class T>
 template <class V>
 auto track_policy<T>::on_init(V& v) -> value_type
 {
-    log_ref() = "0";
+    log_ref() = "unknown";
     return base_type::on_init(v);
 }
 
@@ -29,8 +29,8 @@ void track_policy<T>::on_swap(context_type& lhs, context_type& rhs) const
     using om636::swap;
     using std::swap;
 
-    base_type::on_swap(lhs, rhs);
     swap(lhs.log_ref(), rhs.log_ref());
+    base_type::on_swap(lhs, rhs);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
