@@ -93,6 +93,7 @@ void track_policy<T>::on_dec(context_type& lhs) const
 template <class T>
 void track_policy<T>::on_invert(context_type& lhs) const
 {
+  lhs.log_ref() = "1/(" + lhs.log_ref() + ")";
   base_type::on_invert(lhs);
 }
 
