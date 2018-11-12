@@ -53,6 +53,7 @@ void track_policy<T>::on_subtract(context_type& lhs, const context_type& rhs) co
 template <class T>
 void track_policy<T>::on_mult(context_type& lhs, const context_type& rhs) const
 {
+  lhs.log_ref() += "*" + rhs.log_ref(); 
   base_type::on_mult(lhs, rhs);
 }
 
@@ -60,6 +61,7 @@ void track_policy<T>::on_mult(context_type& lhs, const context_type& rhs) const
 template <class T>
 void track_policy<T>::on_divide(context_type& lhs, const context_type& rhs) const
 {
+  lhs.log_ref() += "/" + rhs.log_ref();
   base_type::on_divide(lhs, rhs);
 }
 

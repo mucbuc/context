@@ -28,6 +28,12 @@ void run_math_test()
     ASSERT( a.subject_ref().log_ref() == "(1+2)" );
 
     a -= b;
+    ASSERT( a.subject_ref().log_ref() == "((1+2)-2)" );
+
+    a = 1;
+    a *= 17; 
+    ASSERT( a.subject_ref().log_ref() == "1*17" ); 
+
     cout << a.subject_ref().log_ref() << endl;
 
     FOOTER;
