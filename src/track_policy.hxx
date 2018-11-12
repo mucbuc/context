@@ -69,6 +69,7 @@ void track_policy<T>::on_divide(context_type& lhs, const context_type& rhs) cons
 template <class T>
 void track_policy<T>::on_remainder(context_type& lhs, const context_type& rhs) const
 {
+  lhs.log_ref() += "%" + rhs.log_ref(); 
   base_type::on_remainder(lhs, rhs);
 }
 
@@ -76,6 +77,7 @@ void track_policy<T>::on_remainder(context_type& lhs, const context_type& rhs) c
 template <class T>
 void track_policy<T>::on_inc(context_type& lhs) const
 {
+  lhs.log_ref() = "(" + lhs.log_ref() + "+1)";
   base_type::on_inc(lhs);
 }
 
@@ -83,6 +85,7 @@ void track_policy<T>::on_inc(context_type& lhs) const
 template <class T>
 void track_policy<T>::on_dec(context_type& lhs) const
 {
+  lhs.log_ref() = "(" + lhs.log_ref() + "-1)";
   base_type::on_dec(lhs);
 }
 
