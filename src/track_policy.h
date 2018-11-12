@@ -20,12 +20,7 @@ struct track_policy : forward_policy<T> {
 
     template <class V>
     static V to_value(const context_type&);
-
-    // comparisons
-    virtual bool on_equal(const context_type&, const context_type&) const;
-    virtual int on_cmp(const context_type&, const context_type&) const;
-    virtual int on_sign(const context_type&) const;
-
+*/
     // modifiers
     virtual void on_swap(context_type&, context_type&) const;
     virtual void on_add(context_type&, const context_type&) const;
@@ -35,11 +30,11 @@ struct track_policy : forward_policy<T> {
     virtual void on_remainder(context_type&, const context_type&) const;
     virtual void on_inc(context_type&) const;
     virtual void on_dec(context_type&) const;
-    virtual void on_invert(context_type&) const;*/
+    virtual void on_invert(context_type&) const;
 };
 
 } // om636
 
-//#include "track_policy.hxx"
+#include "track_policy.hxx"
 
 #endif // TRACK_POLICY_H_GGFDH8900700
