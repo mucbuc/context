@@ -13,6 +13,8 @@ namespace tools {
     {
         T a(0), b(0), c(1), d(-1);
 
+	ASSERT(!a);
+
         ASSERT(a == 0);
         ASSERT(!(a != 0));
 

@@ -152,6 +152,14 @@ public:
     bool operator<=(context) const;
     bool operator<(context) const;
 
+    bool operator!() const;
+/*  TODO:
+    context & operator<<(int);
+    context & operator=<<(int);
+    context & operator<<(int);
+    context & operator=<<(int);
+    */
+
 private:
     value_type m_state;
 };

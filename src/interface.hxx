@@ -400,6 +400,13 @@ bool context<T, U>::operator<(context n) const
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T, template <class> class U>
+bool context<T, U>::operator!() const
+{
+    return !this->on_cmp(*this, 0 );
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T, template <class> class U>
 context<T, U> context<T, U>::operator++(int)
 {
     context result(*this);
