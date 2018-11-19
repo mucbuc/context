@@ -345,6 +345,40 @@ context<T, U>& context<T, U>::operator%=(const context& v)
     return *this;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T, template <class> class U>
+context<T, U>& context<T, U>::operator<<(size_t n) const
+{
+    context result(*this);
+    result.on_shift_left(n);
+    return result;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T, template <class> class U>
+context<T, U>& context<T, U>::operator<<=(size_t n)
+{
+    this->on_shift_left(n);
+    return *this;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T, template <class> class U>
+context<T, U>& context<T, U>::operator>>(size_t n) const
+{
+    context result(*this);
+    result.on_shift_right(n);
+    return result;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T, template <class> class U>
+context<T, U>& context<T, U>::operator>>=(size_t n)
+{
+    this->on_shift_right(n);
+    return *this;
+}
+
 /*     unary operators     */
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T, template <class> class U>
@@ -402,7 +436,7 @@ bool context<T, U>::operator<(context n) const
 template <class T, template <class> class U>
 bool context<T, U>::operator!() const
 {
-    return !this->on_cmp(*this, 0 );
+    return !this->on_cmp(*this, 0);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
