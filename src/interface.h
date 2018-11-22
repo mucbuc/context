@@ -144,11 +144,6 @@ public:
     context operator--(int);
     context& operator--();
 
-    context& operator<<(size_t) const;
-    context& operator<<=(size_t);
-    context& operator>>(size_t) const;
-    context& operator>>=(size_t);
-
     // comparisons
     bool operator==(const context&) const;
     bool operator!=(const context&) const;
@@ -158,6 +153,12 @@ public:
     bool operator<(context) const;
 
     bool operator!() const;
+/*  TODO:
+    context & operator<<(int);
+    context & operator=<<(int);
+    context & operator<<(int);
+    context & operator=<<(int);
+    */
 
 private:
     value_type m_state;
