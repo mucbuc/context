@@ -37,7 +37,7 @@ bool forward_policy<T>::on_equal(const context_type& lhs, const context_type& rh
 template <class T>
 int forward_policy<T>::on_cmp(const context_type& lhs, const context_type& rhs) const
 {
-    return lhs.value_ref() - rhs.value_ref();
+    return om636::cmp(lhs.value_ref(), rhs.value_ref());
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
