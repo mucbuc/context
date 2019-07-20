@@ -14,7 +14,7 @@ context<T, U>::context()
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T, template <class> class U>
 template <class W>
-context<T, U>::context(const W& init)
+context<T, U>::context(W init)
     : subject_policy()
     , m_state(subject_policy::on_init(subject_ref(), init))
 {
@@ -23,7 +23,7 @@ context<T, U>::context(const W& init)
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T, template <class> class U>
 template <class W, class X>
-context<T, U>::context(const W& init, const X& _subject)
+context<T, U>::context(W init, X _subject)
     : subject_policy(_subject)
     , m_state(subject_policy::on_init(subject_ref(), init))
 {
