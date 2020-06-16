@@ -18,7 +18,16 @@ struct forward_policy {
     static value_type on_init(V&, const W&);
 
     template <class V>
+    static value_type && on_init(V&, context_type &&);
+
+    template <class V, class W>
+    static W&& on_init(V&, W&&);
+
+    template <class V>
     static V to_value(const context_type&);
+
+    template <class U>
+    static U& on_write(U&, const context_type&);
 
     // comparisons
     virtual bool on_equal(const context_type&, const context_type&) const;

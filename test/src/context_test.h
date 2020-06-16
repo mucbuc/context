@@ -38,6 +38,12 @@ struct context_test_policy
     }
 
     template <class V, class W>
+    static value_type on_init(V& s, W&& value)
+    {
+        return value_type();// s.m_value = value;
+    }
+
+    template <class V, class W>
     static value_type on_init(V& s, const W& value)
     {
         return s.m_value = value;

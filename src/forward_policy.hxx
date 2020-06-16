@@ -20,9 +20,33 @@ auto forward_policy<T>::on_init(V&, const W& i) -> value_type
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
 template <class V>
+auto forward_policy<T>::on_init(V&, context_type && i) -> value_type &&
+{
+    return std::move(i.value_ref());
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T>
+template <class V, class W>
+auto forward_policy<T>::on_init(V&, W&& i) -> W &&
+{
+    return std::move(i);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T>
+template <class V>
 V forward_policy<T>::to_value(const context_type& c)
 {
     return c.value_ref();
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template <class T>
+template <class U>
+U& forward_policy<T>::on_write(U& s, const context_type& c)
+{
+    return s;
 }
 
 // comparisons

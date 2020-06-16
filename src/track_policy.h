@@ -17,12 +17,19 @@ struct track_policy : forward_policy<T> {
 
     typedef std::string string_type;
     using base_type::to_value;
+    using base_type::on_write;
 
     template <class V>
     static value_type on_init(V&);
 
     template <class V, class W>
     static value_type on_init(V&, const W&);
+
+    template <class V>
+    static value_type && on_init(V&, context_type &&);
+
+    template <class V, class W>
+    static W&& on_init(V&, W&&);
 
     // modifiers
     virtual void on_swap(context_type&, context_type&) const;
