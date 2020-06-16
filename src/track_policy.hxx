@@ -6,7 +6,7 @@ template <class T>
 template <class V>
 auto track_policy<T>::on_init(V& v) -> value_type
 {
-    log_ref() = "unknown";
+    v.log_ref() = "unknown";
     return base_type::on_init(v);
 }
 
