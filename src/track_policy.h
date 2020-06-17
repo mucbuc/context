@@ -16,8 +16,8 @@ struct track_policy : forward_policy<T> {
     using typename base_type::value_type;
 
     typedef std::string string_type;
-    using base_type::to_value;
     using base_type::on_write;
+    using base_type::to_value;
 
     template <class V>
     static value_type on_init(V&);
@@ -26,7 +26,7 @@ struct track_policy : forward_policy<T> {
     static value_type on_init(V&, const W&);
 
     template <class V>
-    static value_type && on_init(V&, context_type &&);
+    static value_type&& on_init(V&, context_type&&);
 
     template <class V, class W>
     static W&& on_init(V&, W&&);

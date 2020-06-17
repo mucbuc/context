@@ -52,13 +52,13 @@ TODO:
 namespace om636 {
 template <class T, template <class> class U>
 class context
-    : public U<context<T, U> > {
+    : public U<context<T, U>> {
     template <class, template <class> class>
     friend class context;
 
 public:
     // types
-    typedef U<context<T, U> > subject_policy;
+    typedef U<context<T, U>> subject_policy;
     typedef typename subject_policy::value_type value_type;
 
     // resources
@@ -153,7 +153,7 @@ public:
     bool operator<(context) const;
 
     bool operator!() const;
-/*  TODO:
+    /*  TODO:
     context & operator<<(int);
     context & operator=<<(int);
     context & operator<<(int);

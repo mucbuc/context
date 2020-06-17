@@ -18,7 +18,7 @@ struct forward_policy {
     static value_type on_init(V&, const W&);
 
     template <class V>
-    static value_type && on_init(V&, context_type &&);
+    static value_type&& on_init(V&, context_type&&);
 
     template <class V, class W>
     static W&& on_init(V&, W&&);

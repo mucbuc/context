@@ -12,7 +12,7 @@ namespace default_subject {
     };
 
     template <class T, template <class> class U>
-    struct traits<context<T, U> > {
+    struct traits<context<T, U>> {
         typedef T value_type;
     };
 

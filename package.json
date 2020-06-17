@@ -2,7 +2,8 @@
   "name":"context",
   "version":"0.0.0",
   "scripts": {
-    "test": "crimp test/test.json -g"
+    "test": "crimp test/test.json -g",
+    "format": "clang-format -i --style=Webkit src/*.h test/src/*.cpp"
   },
   "devDependencies": {
     "traverse": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
