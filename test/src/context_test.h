@@ -36,11 +36,19 @@ struct context_test_policy
     {
         return s.m_value = 123;
     }
-
+    
+    template <class V>
+    static value_type on_init(V& s, context_type && v)
+    {
+	s.m_value = std::move(v.m_value);
+	return s.m_value;
+    }
+    
     template <class V, class W>
     static value_type on_init(V& s, W&& value)
     {
-        return value_type();// s.m_value = value;
+	s.m_value = std::move(value);
+	return s.m_value;
     }
 
     template <class V, class W>
@@ -69,7 +77,7 @@ void run_context_test()
 
     // check copy constructor
     context_type b(321);
-    ASSERT(b.m_value == 321);
+    ASSERT(b.m_value == 321)(b.m_value);
 
     // Check on_swap
     a = b;
