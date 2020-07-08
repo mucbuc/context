@@ -1,6 +1,6 @@
 {
-  "name":"context",
-  "version":"0.0.0",
+  "name": "context",
+  "version": "0.0.0",
   "scripts": {
     "test": "ccargs -p test/test.json -t -c -v",
     "format": "clang-format -i --style=Webkit src/*.h test/src/*.cpp"
@@ -8,5 +8,9 @@
   "devDependencies": {
     "traverse": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
     "drop": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/drop"
+  },
+  "dependencies": {
+    "husky": "^4.2.5",
+    "shelljs": "^0.8.4"
   }
 }
