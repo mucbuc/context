@@ -1,0 +1,10 @@
+{
+  "tests":[
+    "test.json",
+    "reduce.json",
+    "modify_ref.json",
+    "visit_if.json",
+    "ref_wrapper.json",
+    "examples.json"
+   ]
+}

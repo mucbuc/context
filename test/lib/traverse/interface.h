@@ -35,6 +35,7 @@ todo:
 #ifndef TRAVERSE_H__emhAd95QCGblkZVTxDygf3upPMocRq
 #define TRAVERSE_H__emhAd95QCGblkZVTxDygf3upPMocRq
 
+#include <functional>
 #include <tuple>
 
 namespace om636 {
@@ -42,225 +43,34 @@ namespace traverse {
 
     //  unary
     template <class T, class U>
-    U elements(T&, U);
+    U elements(T, U);
     template <class T, class U>
-    U elements(T&&, U);
-    template <class T, class U>
-    U elements(const T&, U);
+    U elements_if(T, U);
 
     template <class T, class U>
-    U elements_if(T&, U);
+    U combinations(T, U);
     template <class T, class U>
-    U elements_if(T&&, U);
-    template <class T, class U>
-    U elements_if(const T&, U);
+    U combinations_if(T, U);
 
     template <class T, class U>
-    U combinations(T&, U);
+    U pairs(T, U);
     template <class T, class U>
-    U combinations(T&&, U);
-    template <class T, class U>
-    U combinations(const T&, U);
-
-    template <class T, class U>
-    U combinations_if(T&, U);
-    template <class T, class U>
-    U combinations_if(T&&, U);
-    template <class T, class U>
-    U combinations_if(const T&, U);
-
-    template <class T, class U>
-    U pairs(T&, U);
-    template <class T, class U>
-    U pairs(T&&, U);
-    template <class T, class U>
-    U pairs(const T&, U);
-
-    template <class T, class U>
-    U pairs_if(T&, U);
-    template <class T, class U>
-    U pairs_if(T&&, U);
-    template <class T, class U>
-    U pairs_if(const T&, U);
+    U pairs_if(T, U);
 
     template <class T, class U, class V>
-    std::tuple<T, V>
-    reduce(U&, V);
-    template <class T, class U, class V>
-    std::tuple<T, V>
-    reduce(U&&, V);
-    template <class T, class U, class V>
-    std::tuple<T, V>
-    reduce(const U&, V);
+    std::tuple<T, V> reduce(U, V);
 
     //  binary
-    template <class T, class V>
-    V parallel(T&, T&, V);
-    template <class T, class V>
-    V parallel(T&, T&&, V);
-    template <class T, class V>
-    V parallel(T&, const T&, V);
-
-    template <class T, class V>
-    V parallel(T&&, T&, V);
-    template <class T, class V>
-    V parallel(T&&, T&&, V);
-    template <class T, class V>
-    V parallel(T&&, const T&, V);
-
-    template <class T, class V>
-    V parallel(const T&, T&, V);
-    template <class T, class V>
-    V parallel(const T&, T&&, V);
-    template <class T, class V>
-    V parallel(const T&, const T&, V);
+    template <class T, class U, class V>
+    V parallel(T, U, V);
+    template <class T, class U, class V>
+    V parallel_if(T, U, V);
 
     template <class T, class U, class V>
-    V parallel(T&, U&, V);
+    V combinations(T, U, V);
     template <class T, class U, class V>
-    V parallel(T&, U&&, V);
-    template <class T, class U, class V>
-    V parallel(T&, const U&, V);
+    V combinations_if(T, U, V);
 
-    template <class T, class U, class V>
-    V parallel(T&&, U&, V);
-    template <class T, class U, class V>
-    V parallel(T&&, U&&, V);
-    template <class T, class U, class V>
-    V parallel(T&&, const U&&, V);
-
-    template <class T, class U, class V>
-    V parallel(const T&, U&, V);
-    template <class T, class U, class V>
-    V parallel(const T&, U&&, V);
-    template <class T, class U, class V>
-    V parallel(const T&, const U&&, V);
-
-    template <class T, class V>
-    V parallel_if(T&, T&, V);
-    template <class T, class V>
-    V parallel_if(T&, T&&, V);
-    template <class T, class V>
-    V parallel_if(T&, const T&, V);
-
-    template <class T, class V>
-    V parallel_if(T&&, T&, V);
-    template <class T, class V>
-    V parallel_if(T&&, T&&, V);
-    template <class T, class V>
-    V parallel_if(T&&, const T&, V);
-
-    template <class T, class V>
-    V parallel_if(const T&, T&, V);
-    template <class T, class V>
-    V parallel_if(const T&, T&&, V);
-    template <class T, class V>
-    V parallel_if(const T&, const T&, V);
-
-    template <class T, class U, class V>
-    V parallel_if(T&, U&, V);
-    template <class T, class U, class V>
-    V parallel_if(T&, U&&, V);
-    template <class T, class U, class V>
-    V parallel_if(T&, const U&, V);
-
-    template <class T, class U, class V>
-    V parallel_if(T&&, U&, V);
-    template <class T, class U, class V>
-    V parallel_if(T&&, U&&, V);
-    template <class T, class U, class V>
-    V parallel_if(T&&, const U&&, V);
-
-    template <class T, class U, class V>
-    V parallel_if(const T&, U&, V);
-    template <class T, class U, class V>
-    V parallel_if(const T&, U&&, V);
-    template <class T, class U, class V>
-    V parallel_if(const T&, const U&, V);
-
-    template <class T, class V>
-    V combinations(T&, T&, V);
-    template <class T, class V>
-    V combinations(T&, T&&, V);
-    template <class T, class V>
-    V combinations(T&, const T&, V);
-
-    template <class T, class V>
-    V combinations(T&&, T&, V);
-    template <class T, class V>
-    V combinations(T&&, T&&, V);
-    template <class T, class V>
-    V combinations(T&&, const T&, V);
-
-    template <class T, class V>
-    V combinations(const T&, T&, V);
-    template <class T, class V>
-    V combinations(const T&, T&&, V);
-    template <class T, class V>
-    V combinations(const T&, const T&, V);
-
-    template <class T, class U, class V>
-    V combinations(T&, U&, V);
-    template <class T, class U, class V>
-    V combinations(T&, U&&, V);
-    template <class T, class U, class V>
-    V combinations(T&, const U&, V);
-
-    template <class T, class U, class V>
-    V combinations(T&&, U&, V);
-    template <class T, class U, class V>
-    V combinations(T&&, U&&, V);
-    template <class T, class U, class V>
-    V combinations(T&&, const U&&, V);
-
-    template <class T, class U, class V>
-    V combinations(const T&, U&, V);
-    template <class T, class U, class V>
-    V combinations(const T&, U&&, V);
-    template <class T, class U, class V>
-    V combinations(const T&, const U&&, V);
-
-    template <class T, class V>
-    V combinations_if(T&, T&, V);
-    template <class T, class V>
-    V combinations_if(T&, T&&, V);
-    template <class T, class V>
-    V combinations_if(T&, const T&, V);
-
-    template <class T, class V>
-    V combinations_if(T&&, T&, V);
-    template <class T, class V>
-    V combinations_if(T&&, T&&, V);
-    template <class T, class V>
-    V combinations_if(T&&, const T&, V);
-
-    template <class T, class V>
-    V combinations_if(const T&, T&, V);
-    template <class T, class V>
-    V combinations_if(const T&, T&&, V);
-    template <class T, class V>
-    V combinations_if(const T&, const T&, V);
-
-    template <class T, class U, class V>
-    V combinations_if(T&, U&, V);
-    template <class T, class U, class V>
-    V combinations_if(T&, U&&, V);
-    template <class T, class U, class V>
-    V combinations_if(T&, const U&, V);
-
-    template <class T, class U, class V>
-    V combinations_if(T&&, U&, V);
-    template <class T, class U, class V>
-    V combinations_if(T&&, U&&, V);
-    template <class T, class U, class V>
-    V combinations_if(T&&, const U&&, V);
-
-    template <class T, class U, class V>
-    V combinations_if(const T&, U&, V);
-    template <class T, class U, class V>
-    V combinations_if(const T&, U&&, V);
-    template <class T, class U, class V>
-    V combinations_if(const T&, const U&, V);
 } // namespace traverse
 } // namespace om636
 

@@ -1,46 +1,6 @@
 {
-  "_from": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
-  "_id": "traverse@0.0.0",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/traverse",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "git",
-    "raw": "traverse@git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
-    "name": "traverse",
-    "escapedName": "traverse",
-    "rawSpec": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
-    "saveSpec": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
-    "fetchSpec": "ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
-    "gitCommittish": null
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse#734acba48e688300df37d66c451e814c9e60170b",
-  "_spec": "traverse@git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
-  "_where": "/tmp/tmp-26626NgiurV4IaU72",
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/mucbuc/traverse/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "* std::tuple traversal functions",
-  "directories": {
-    "test": "test"
-  },
-  "homepage": "https://github.com/mucbuc/traverse#readme",
-  "license": "MIT",
-  "main": "index.js",
-  "name": "traverse",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mucbuc/traverse.git"
-  },
   "scripts": {
-    "test": "crimp test/test.json -g"
-  },
-  "version": "0.0.0"
+    "test": "crimp test/test.json -g",
+    "format": "clang-format -i --style=Webkit *.h *.hxx test/src/*.cpp"
+  }
 }

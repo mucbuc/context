@@ -12,6 +12,12 @@ struct dummy {
     {
         std::cout << e << " ";
     }
+
+    template <class T, class U>
+    void operator()(const T& e, const U& p) const
+    {
+        std::cout << e << "," << p << " ";
+    }
 };
 
 int main(int argc, const char* argv[])
@@ -24,5 +30,8 @@ int main(int argc, const char* argv[])
     traverse::elements(t, dummy{});
 
     cout << endl;
+
+    tuple<int, int> a(3, 22);
+    traverse::combinations(a, tuple<int, int, int, int>(2, 4, 5, 6), dummy{});
     return 0;
 }
