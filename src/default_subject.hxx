@@ -5,42 +5,37 @@ namespace default_subject {
         struct stream_out {
             stream_out(const stream_out&) = default;
 
-            template <class U>
-            U operator()(const U& u) const
-            {
-                m_stream << u;
-                return u;
-            }
-
             template <class U, class V>
             V operator()(const U& u, const V& v) const
             {
-                m_stream << " " << v;
+                if (m_first) {
+                  m_stream << u;
+                  m_first = false;
+                }m_stream << " " << v;
                 return v;
             }
 
             T m_stream;
+            mutable bool m_first = true;
         };
 
         template <class T>
         struct stream_in {
             stream_in(const stream_in&) = default;
 
-            template <class U>
-            U operator()(U& u) const
-            {
-                m_stream >> u;
-                return u;
-            }
-
             template <class U, class V>
             V operator()(U& u, V& v) const
             {
+                if (m_first) {
+                  m_stream >> u;
+                  m_first = false;
+                }
                 m_stream >> v;
                 return v;
             }
 
             T m_stream;
+            mutable bool m_first = true;
         };
     }
 
@@ -94,7 +89,7 @@ namespace default_subject {
         Private::stream_in<U&> op = { s };
 
         // must specify value_type to prevent ambiguity on gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04)
-        traverse::pairs<value_type>(c.value_ref(), op);
+        traverse::pairs(std::ref(c.value_ref()), op);
         return s;
     }
 }
