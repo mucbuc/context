@@ -16,7 +16,6 @@ struct track_policy : forward_policy<T> {
     using typename base_type::value_type;
 
     typedef std::string string_type;
-    using base_type::on_write;
     using base_type::to_value;
 
     template <class V>
