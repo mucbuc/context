@@ -66,7 +66,7 @@ public:
     context(const context&);
 
     template <class W>
-    context(W&&);
+    context(W);
     template <class W, class X>
     context(W, X);
     virtual ~context() = default;

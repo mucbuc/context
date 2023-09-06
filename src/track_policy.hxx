@@ -21,28 +21,6 @@ auto track_policy<T>::on_init(V& v, const W& i) -> value_type
     return base_type::on_init(v, i);
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
-template <class T>
-template <class V>
-auto track_policy<T>::on_init(V& v, context_type && i) -> value_type &&
-{
-    std::stringstream s;
-    s << i;
-    v.log_ref() = s.str();
-    return base_type::on_init(v, std::move(i));
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////
-template <class T>
-template <class V, class W>
-auto track_policy<T>::on_init(V& v, W&& i) -> W&&
-{
-    std::stringstream s;
-    s << i;
-    v.log_ref() = s.str();
-    return base_type::on_init(v, std::move(i));
-}
-
 // modifiers
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>
