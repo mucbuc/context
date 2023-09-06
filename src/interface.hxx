@@ -333,7 +333,7 @@ template <class T, template <class> class U>
 template <class W>
 context<T, U>& context<T, U>::operator%=(const W& v)
 {
-    this->on_remainder(result, v);
+    this->on_remainder(*this, v);
     return *this;
 }
 
