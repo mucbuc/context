@@ -171,7 +171,7 @@ template <class W>
 context<T, U> context<T, U>::operator+(const W& v) const
 {
     context result(*this);
-    result.on_add(result, context(v));
+    result.on_add(result, v);
     return result;
 }
 
@@ -189,7 +189,7 @@ template <class T, template <class> class U>
 template <class W>
 context<T, U>& context<T, U>::operator+=(const W& v)
 {
-    this->on_add(*this, context(v));
+    this->on_add(*this, v);
     return *this;
 }
 
@@ -206,7 +206,7 @@ template <class T, template <class> class U>
 template <class W>
 context<T, U>& context<T, U>::operator-=(const W& v)
 {
-    this->on_subtract(*this, context(v));
+    this->on_subtract(*this, v);
     return *this;
 }
 
@@ -224,7 +224,7 @@ template <class W>
 context<T, U> context<T, U>::operator-(const W& v) const
 {
     context result(*this);
-    result.on_subtract(result, context(v));
+    result.on_subtract(result, v);
     return result;
 }
 
@@ -243,7 +243,7 @@ template <class W>
 context<T, U> context<T, U>::operator*(const W& v) const
 {
     context result(*this);
-    result.on_mult(result, context(v));
+    result.on_mult(result, v);
     return result;
 }
 
@@ -261,7 +261,7 @@ template <class T, template <class> class U>
 template <class W>
 context<T, U>& context<T, U>::operator*=(const W& v)
 {
-    this->on_mult(*this, context(v));
+    this->on_mult(*this, v);
     return *this;
 }
 
@@ -279,7 +279,7 @@ template <class W>
 context<T, U> context<T, U>::operator/(const W& v) const
 {
     context result(*this);
-    result.on_divide(result, context(v));
+    result.on_divide(result, v);
     return result;
 }
 
@@ -297,7 +297,7 @@ template <class T, template <class> class U>
 template <class W>
 context<T, U>& context<T, U>::operator/=(const W& v)
 {
-    this->on_divide(*this, context(v));
+    this->on_divide(*this, v);
     return *this;
 }
 
@@ -315,7 +315,7 @@ template <class W>
 context<T, U> context<T, U>::operator%(const W& v) const
 {
     context result(*this);
-    result.on_remainder(result, context(v));
+    result.on_remainder(result, v);
     return result;
 }
 
@@ -333,7 +333,7 @@ template <class T, template <class> class U>
 template <class W>
 context<T, U>& context<T, U>::operator%=(const W& v)
 {
-    this->on_remainder(context(v));
+    this->on_remainder(v);
     return *this;
 }
 
