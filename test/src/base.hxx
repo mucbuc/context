@@ -1,11 +1,24 @@
 namespace om636 {
 namespace tools {
+ 
+    template <class T> 
+    void tester<T>::test_value_semantics()
+    { 
+      T a;
+      a = T(0); 
+      ASSERT(a == 0);
+
+      FOOTER;
+    }
+
     template <class T>
     template <class U>
     void tester<T>::test_binary(const T& a, const T& b, const T& result, U f)
     {
         ASSERT((a.*f)(b) == result);
         ASSERT(!((a.*f)(b) != result));
+
+        FOOTER;
     }
 
     template <class T>
@@ -71,6 +84,8 @@ namespace tools {
 
         ASSERT(-d > a);
         ASSERT(!(-d <= a));
+
+        FOOTER;
     }
 
     template <class T>
@@ -112,6 +127,8 @@ namespace tools {
 
         ASSERT(--d == 0);
         ASSERT(d-- == 0);
+
+        FOOTER;
     }
 
     template <class T>
@@ -124,6 +141,8 @@ namespace tools {
 
         ++a;
         ASSERT(a.template to_value<U>() == 1);
+
+        FOOTER;
     }
 
     template <class T>
@@ -132,8 +151,11 @@ namespace tools {
         using namespace om636::tools;
         om636::tools::tester<T>::test_comparisons();
         om636::tools::tester<T>::test_increments();
+        om636::tools::tester<T>::test_value_semantics();
         om636::tools::tester<T>::template test_conversions<int>();
         om636::tools::tester<T>::template test_conversions<float>();
+ 
+ 	FOOTER;
     }
 
 } // tools

@@ -12,6 +12,8 @@ namespace tools {
 
         static void test_increments();
 
+        static void test_value_semantics();
+
         template <class U>
         static void test_conversions();
 
