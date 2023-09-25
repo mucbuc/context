@@ -25,6 +25,22 @@ V forward_policy<T>::to_value(const context_type& c)
     return c.value_ref();
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+template<class T>
+template <class U>
+U& forward_policy<T>::on_write(U& s, const context_type& c)
+{
+  return default_subject::policy<T>::on_write(s, c);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+template<class T>
+template<class U>
+U& forward_policy<T>::on_read(U& s, context_type & c)
+{
+  return default_subject::policy<T>::on_read(s, c);
+}
+ 
 // comparisons
 /////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>

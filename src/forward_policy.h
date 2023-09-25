@@ -20,6 +20,12 @@ struct forward_policy {
     template <class V>
     static V to_value(const context_type&);
 
+    template <class U>
+    static U& on_write(U&, const context_type&);
+
+    template <class U>
+    static U& on_read(U&, context_type&);
+
     // comparisons
     virtual bool on_equal(const context_type&, const context_type&) const;
     virtual int on_cmp(const context_type&, const context_type&) const;
