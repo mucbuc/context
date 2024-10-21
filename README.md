@@ -1,6 +1,6 @@
 # context
 
-undefined
+State access manager
 
 ## Interface
 ```
