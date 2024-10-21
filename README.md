@@ -8,8 +8,6 @@ State access manager
 
 #include <type_traits>
 
-#include <lib/context/src/default_subject.h>
-#include <lib/context/src/forward_subject.h>
 #include <lib/context/src/fwd.h>
 
 namespace om636 {
@@ -157,6 +155,7 @@ T& operator>>(T& s, context<U, V>&);
 #include <tmp/src/test.h>
 
 #include <lib/context/src/interface.h>
+#include <lib/context/src/default_subject.h>
 
 int main(int argc, const char* argv[])
 {
@@ -175,13 +174,12 @@ int main(int argc, const char* argv[])
 ```
 #### Output
 ```
-""
+"2 3 5 7\n"
 ```
 ### Example 2
 #### Source code
 ```
 #include <tuple>
-#include <sstream>
 #include <tmp/src/test.h>
 
 #include <lib/context/src/interface.h>
@@ -210,5 +208,5 @@ int main(int argc, const char* argv[])
 ```
 #### Output
 ```
-""
+"(1+2)\n((1+2)-2)\n1*17\n"
 ```
