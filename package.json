@@ -5,7 +5,7 @@
   "scripts": {
     "test": "ccargs -p test/test.json -t -c -v",
     "format": "clang-format -i --style=Webkit src/*.h test/src/*.cpp",
-    "generateDocs":"doc-tool package_header src_interface test_examples > README.md"
+    "generateDocs":"doc-tool package_header test_examples src_interface > README.md"
   },
   "devDependencies": {
     "traverse": "git+ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/traverse",
