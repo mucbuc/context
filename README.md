@@ -148,9 +148,9 @@ T& operator>>(T& s, context<U, V>&);
 ## Examples
 
 ### Example 1
-#### Build
+#### Build command log
 ```
-g++ -std=c++17 -isystem /Users/mucbuc/work/context/test /Users/mucbuc/work/context/test/src/example1.cpp -pthread -DTARGET_TEST=1  -isystem /Users/mucbuc/work/ccargs /Users/mucbuc/work/ccargs/asserter/src/archiver.cpp /Users/mucbuc/work/ccargs/asserter/src/asserter.cpp  -o tmp
+g++ -isystem /Users/mucbuc/work/context/test /Users/mucbuc/work/context/test/src/example1.cpp -pthread -DTARGET_TEST=1 -std=c++17 -o tmp
 ```
 #### Source code
 ```
@@ -181,9 +181,9 @@ int main(int argc, const char* argv[])
 2 3 5 7
 ```
 ### Example 2
-#### Build
+#### Build command log
 ```
-g++ -std=c++17 -isystem /Users/mucbuc/work/context/test /Users/mucbuc/work/context/test/src/example2.cpp -pthread -DTARGET_TEST=1  -isystem /Users/mucbuc/work/ccargs /Users/mucbuc/work/ccargs/asserter/src/archiver.cpp /Users/mucbuc/work/ccargs/asserter/src/asserter.cpp  -o tmp
+g++ -isystem /Users/mucbuc/work/context/test /Users/mucbuc/work/context/test/src/example2.cpp -pthread -DTARGET_TEST=1 -std=c++17 -o tmp
 ```
 #### Source code
 ```
