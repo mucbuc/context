@@ -1,9 +1,8 @@
-
-#ifndef FORWARD_POLICY_H_GGFDH8900700
-#define FORWARD_POLICY_H_GGFDH8900700
+#pragma once
 
 #include "default_subject.h"
 #include <lib/drop/interface.h>
+#include <lib/traverse/interface.h>
 
 namespace om636 {
 template <class T>
@@ -47,4 +46,3 @@ struct forward_policy {
 
 #include "forward_policy.hxx"
 
-#endif // FORWARD_POLICY_H_GGFDH8900700

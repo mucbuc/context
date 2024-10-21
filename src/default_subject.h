@@ -1,5 +1,4 @@
-#ifndef DEFAULT_SUBJECT_H_HYJ7766FHF65
-#define DEFAULT_SUBJECT_H_HYJ7766FHF65
+#pragma once
 
 #include <lib/context/src/fwd.h>
 #include <lib/traverse/interface.h>
@@ -50,5 +49,3 @@ namespace default_subject {
 } // om636
 
 #include "default_subject.hxx"
-
-#endif // DEFAULT_SUBJECT_H_HYJ7766FHF65

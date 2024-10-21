@@ -1,3 +1,44 @@
+/*
+om636
+Copyright (c) 2013 by Mark Busenitz
+www.github.com/mucbuc
+    
+objective:
+    - state owner
+    - subject policy host
+    - notify policy of requested state changes
+ 
+type: concrete
+ 
+dependancies:
+    - std::tuple
+    - om636/core/traverse
+ 
+TODO:
+     I/O:
+     -   default whitespace seperator:
+     
+         stringstream s;
+         s << "A B C";
+         
+         tuple< a, b, c > t;
+         s >> t;
+     
+     -   comma seperator:
+ 
+         stringstream s;
+         s << "A, B, C,";
+         
+         tuple< a, b, c > t;
+         s >> t.sep( ',' );
+         
+         cout << t.sep( ',' );   // ==> A, B, C
+ 
+ note:
+ - subject's that write to file could cause an exception in which the value probably shouldn't change
+*/
+
+
 namespace om636 {
 #pragma mark - context
 

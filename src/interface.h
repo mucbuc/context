@@ -1,53 +1,8 @@
-/*
-om636
-Copyright (c) 2013 by Mark Busenitz
-www.github.com/mucbuc
-    
-objective:
-    - state owner
-    - subject policy host
-    - notify policy of requested state changes
- 
-type: concrete
- 
-dependancies:
-    - std::tuple
-    - om636/core/traverse
- 
-TODO:
-     I/O:
-     -   default whitespace seperator:
-     
-         stringstream s;
-         s << "A B C";
-         
-         tuple< a, b, c > t;
-         s >> t;
-     
-     -   comma seperator:
- 
-         stringstream s;
-         s << "A, B, C,";
-         
-         tuple< a, b, c > t;
-         s >> t.sep( ',' );
-         
-         cout << t.sep( ',' );   // ==> A, B, C
- 
- note:
- - subject's that write to file could cause an exception in which the value probably shouldn't change
-*/
+#pragma once
 
-#ifndef INTERFACE_H__INCLUDE_GUARD__45435435
-#define INTERFACE_H__INCLUDE_GUARD__45435435
-
-#include <iostream>
-#include <tuple>
 #include <type_traits>
 
-#include <lib/context/src/default_subject.h>
 #include <lib/context/src/fwd.h>
-#include <lib/traverse/interface.h>
 
 namespace om636 {
 template <class T, template <class> class U>
@@ -181,4 +136,3 @@ T& operator>>(T& s, context<U, V>&);
 
 #include "interface.hxx"
 
-#endif // INTERFACE_H__INCLUDE_GUARD__45435435

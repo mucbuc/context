@@ -3,6 +3,7 @@
 #include <tmp/src/test.h>
 
 #include <lib/context/src/interface.h>
+#include <lib/context/src/default_subject.h>
 
 int main(int argc, const char* argv[])
 {
