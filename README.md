@@ -174,7 +174,7 @@ int main(int argc, const char* argv[])
 ```
 #### Output
 ```
-"2 3 5 7\n"
+2 3 5 7
 ```
 ### Example 2
 #### Source code
@@ -208,5 +208,7 @@ int main(int argc, const char* argv[])
 ```
 #### Output
 ```
-"(1+2)\n((1+2)-2)\n1*17\n"
+(1+2)
+((1+2)-2)
+1*17
 ```
