@@ -1,6 +1,4 @@
-
-#ifndef TRACK_POLICY_H_GGFDH8900700
-#define TRACK_POLICY_H_GGFDH8900700
+#pragma once
 
 #include <sstream>
 #include <string>
@@ -46,4 +44,4 @@ private:
 
 #include "track_policy.hxx"
 
-#endif // TRACK_POLICY_H_GGFDH8900700
+

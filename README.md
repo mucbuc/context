@@ -152,7 +152,7 @@ T& operator>>(T& s, context<U, V>&);
 ```
 #include <tuple>
 #include <sstream>
-#include <tmp/src/test.h>
+#include <iostream>
 
 #include <lib/context/src/interface.h>
 #include <lib/context/src/default_subject.h>
@@ -180,7 +180,7 @@ int main(int argc, const char* argv[])
 #### Source code
 ```
 #include <tuple>
-#include <tmp/src/test.h>
+#include <iostream>
 
 #include <lib/context/src/interface.h>
 #include <lib/context/src/track_policy.h>
