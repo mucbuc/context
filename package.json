@@ -1,6 +1,7 @@
 {
   "name": "context",
   "version": "0.0.0",
+  "description": "State access manager",
   "scripts": {
     "test": "ccargs -p test/test.json -t -c -v",
     "format": "clang-format -i --style=Webkit src/*.h test/src/*.cpp",
