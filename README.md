@@ -150,7 +150,7 @@ T& operator>>(T& s, context<U, V>&);
 ### Example 1
 #### Build command log
 ```
-g++ -isystem /Users/mucbuc/work/context/test /Users/mucbuc/work/context/test/src/example1.cpp -pthread -DTARGET_TEST=1 -std=c++17 -o tmp
+g++ -isystem test test/src/example1.cpp -pthread -DTARGET_TEST=1 -std=c++17 -o tmp
 ```
 #### Source code
 ```
@@ -183,7 +183,7 @@ int main(int argc, const char* argv[])
 ### Example 2
 #### Build command log
 ```
-g++ -isystem /Users/mucbuc/work/context/test /Users/mucbuc/work/context/test/src/example2.cpp -pthread -DTARGET_TEST=1 -std=c++17 -o tmp
+g++ -isystem test test/src/example2.cpp -pthread -DTARGET_TEST=1 -std=c++17 -o tmp
 ```
 #### Source code
 ```
