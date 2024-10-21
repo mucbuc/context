@@ -1,0 +1,10 @@
+{
+  "include": 
+  [ 
+    "lib/context/def.json"
+  ], 
+  "sources":
+  [
+    "src/example2.cpp"
+  ]
+}

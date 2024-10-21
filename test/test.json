@@ -1,12 +1,8 @@
 {
-	"includes":[
-		"lib/context/def.json"
-	],
-	"sources": [
-		"src/base.h",
-		"src/base.hxx",
-		"src/context_test.h",
-		"src/main.cpp",
-		"src/math_test.h"
-	]
+  "include":[
+    "lib/context/def.json"
+  ],
+  "sources":[
+    "src/main.cpp"
+  ]
 }
